@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Registration form </title>
+    <style>
+        .container{
+            height: 1000px;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form action="navreg.php" method="post" enctype="multipart/form-data">
+                <h1>Create Account</h1>
+            <input type="text" name="rollno"  class="rollno" id="rollno"  placeholder="Enter your Rollno" required><br>
+    <input type="text"  name="class" class="class" id="class" placeholder="Enter your Class" ><br>
+       <input type="text"  name="name" class="name" id="name"  placeholder="Enter your name" required ><br>
+      <input type="phone"  name="phone" class="phone" id="phone"  placeholder="Enter your phone no" required><br>
+       <input type="password" name="password"  class="password" id="password"  placeholder="Set your password" required><br>
+      <!-- <video id="cameraStream" width="320" height="240" autoplay></video>
+       <button type="button" onclick="captureImage()">Capture Image</button>
+    in img input : accept="image/*" capture="camera"  -->
+     Screenshot:
+       <input type="file" name="image" class="image" id="image" ><br>
+       <input type="text" name="email" class="email" id="email" placeholder="Enter your Transaction number"><br>
+       <button class="v">Submit</button>
+    </form>
+        </div>
+            <script>
+        // Function to handle image click
+        function handleImageClick() {
+            console.log("Image clicked!");
+            // You can perform additional actions here
+
+            // For example, you might want to trigger the captureImage function
+            captureImage();
+        }
+
+        // Add click event listener to the image
+        const imageElement = document.getElementById("clickedImage");
+        imageElement.addEventListener("click", handleImageClick);
+
+        // Function to capture image from camera
+        function captureImage() {
+            // Get the video element
+            const video = document.getElementById('cameraStream');
+
+            // Access the user's camera
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then((stream) => {
+                    // Display the camera stream in the video element
+                    video.srcObject = stream;
+
+                    // Show the file input for uploading the captured image
+                    const fileInput = document.querySelector('input[type="file"]');
+                    fileInput.style.display = 'block';
+
+                    // Pause the video stream after capturing an image
+                    setTimeout(() => {
+                        stream.getTracks().forEach(track => track.stop());
+                        video.srcObject = null;
+                    }, 2000); // Adjust the time as needed
+                })
+                .catch((error) => {
+                    console.error('Error accessing camera:', error);
+                });
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

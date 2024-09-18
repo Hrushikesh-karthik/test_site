@@ -1,0 +1,31 @@
+Resume building
+
+name, p.no, email id
+career objective
+qualifications(table)
+skills
+additional qualifications
+Personal details(dob, nationality, address)
+
+chronological resume(common format)
+functional resume(focuses on knowledge, skills and abilities)
+Combination resume(combo of both)
+
+don't exceed 2 pages
+don't exceed 3 to 5 bullets per section
+
+Cover Letter
+dte
+name
+address
+pno
+email id
+
+comp offl's name
+comp name
+comp address
+
+self intro why the company requires you
+about skills and job
+
+sign off

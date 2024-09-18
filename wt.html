@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Form Validation</title>
+</head>
+<body>
+  <form id="myForm">
+    <label for="username">Username:</label>
+    <input type="text" id="username" placeholder="Enter your username" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" placeholder="Enter your password" required><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="errorMessages"></div>
+
+  <script>
+    const form = document.getElementById('myForm');
+    const errorMessages = document.getElementById('errorMessages');
+
+    form.addEventListener('submit', function(event) {
+      errorMessages.innerHTML = ''; // Clear previous error messages
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      if (username === '') {
+        displayErrorMessage('Please enter a username.');
+        event.preventDefault(); // Prevent form submission
+      }
+
+      if (password === '') {
+        displayErrorMessage('Please enter a password.');
+        event.preventDefault(); // Prevent form submission
+      }
+
+      // Additional validation logic goes here
+
+      // Final check before allowing form submission
+      if (errorMessages.innerHTML !== '') {
+        event.preventDefault(); // Prevent form submission
+      }
+    });
+
+    function displayErrorMessage(message) {
+      const errorMessage = document.createElement('div');
+      errorMessage.textContent = message;
+      errorMessage.style.color = 'red';
+      errorMessages.appendChild(errorMessage);
+    }
+  </script>
+</body>
+</html>
